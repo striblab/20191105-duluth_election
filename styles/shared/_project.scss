@@ -2,6 +2,150 @@
  * Project specific styling.
  */
 
+ //map styles
+ .map {
+  width:100%;
+  margin-right:auto;
+  margin-left:auto;
+  display:inline-block;
+  text-align:center;
+  vertical-align:top;
+  position:relative;
+ }
+ 
+ .city-label {
+     font-size: 8px !important;
+     margin-left: 3px !important;
+     text-anchor: left !important;
+     stroke:#333333 !important;
+     stroke-width:1px !important;
+     font-weight:normal;
+     pointer-events:none !important;
+ }
+ 
+ .mark {
+     stroke:#333333 !important;
+     stroke-width:0.7px !important;
+     fill:#ffffff !important;
+     pointer-events:none !important;
+ }
+ 
+ .tooltip {
+   background-color: white;
+   height: auto;
+   width: auto;
+   padding: 10px;
+   border-radius: 0;
+   border: 1px solid black;
+   font-size: 13px;
+ }
+ 
+ .hidden {
+   opacity:0 !important;
+   display:none !important;
+ }
+ 
+ .reset {
+   display:none;
+   width:30px;
+   position:absolute;
+   top:2px;
+   right:2px;
+ }
+ 
+ .reset:hover {
+   cursor:pointer;
+ }
+ 
+ .resultRow div {
+   display:inline-block;
+   width:48%;
+ }
+ 
+ .topRow {
+   font-weight:bold;
+ }
+ 
+ section.body {
+   padding-top: 30px;
+   margin-bottom: 45px;
+   max-width: 960px;
+   margin-left:auto;
+   margin-right:auto;
+ }
+ 
+ section.body p {
+   max-width: 525px;
+   margin-left:auto;
+   margin-right:auto;
+ }
+ 
+ .key {
+   text-align:left;
+   min-height:200px;
+ }
+ 
+ .precincts {
+   fill: #DCDCDC !important;
+   stroke: white !important;
+   stroke-width: 0.03px !important;
+   stroke-linejoin: round !important;
+   stroke-linecap: round !important;
+ }
+ 
+ .precinct {
+   stroke-width: 0.03px !important;
+ }
+ 
+ #mapper svg .precinct {
+   stroke-width: 0.1px !important;
+ }
+ 
+ .precinct:hover {
+   opacity:0.5;
+   cursor:pointer;
+ }
+ 
+ .district {
+   fill-opacity:0 !important;
+   stroke: white !important;
+ }
+ 
+ .county {
+   fill-opacity:0 !important;
+   stroke: white !important;
+   stroke-width: 0.3px !important;
+ }
+ 
+ .infocus {
+      stroke-width: -0.5px !important;
+ }
+ 
+ .faded {
+   opacity:1 !important;
+   fill-opacity:1 !important;
+   fill:#eeeeee !important;
+ }
+ 
+ .CD1, .CD2, .CD3, .CD4, .CD5, .CD6, .CD7, .CD8 {
+   stroke: white !important;
+   stroke-opacity: 0.3 !important;
+   stroke-linejoin: round !important;
+   stroke-linecap: round !important;
+ }
+ 
+ .fallback .district {
+   stroke-opacity: 1 !important;
+   stroke-width: 0.3px !important;
+   stroke: white !important;
+   display:block !important;
+ }
+ 
+ 
+ .fallback .hidden {
+   opacity:1 !important;
+ }
+ 
  //contest tables
 .contest-table {
 	margin-bottom: 0.5em;
@@ -119,7 +263,7 @@
 		tr.party-dem1 {
       td.winner span,
       td.bar span.pctBar {
-        background-color: #857AAA;
+        background-color: #0258a0;
       }
   
       td.winner span.check {
@@ -133,7 +277,7 @@
 		tr.party-dem2 {
       td.winner span,
       td.bar span.pctBar {
-        background-color: #7F98AA;
+        background-color: #5BBF48;
       }
   
       td.winner span.check {

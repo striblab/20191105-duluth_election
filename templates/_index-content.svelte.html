@@ -33,7 +33,10 @@
 
   <div class="slide">
 
-    <div id="chart"></div>
+      <div class="map" id="mapper">
+          <div class="reset legendary gray4">&#x2715;</div>
+          <svg width="520" height="600" viewBox="0 0 520 600" preserveAspectRatio="xMidYMid" class="desktop"></svg>
+      </div>
 
     <div class="contest-table">
       <table>
@@ -45,7 +48,7 @@
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem3" title="party">
+              <tr class="party-dem1" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -60,7 +63,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem1" title="party">
+            <tr class="party-dem2" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -74,82 +77,6 @@
                 <span class="pctBar" style="width: 1%;"></span>
               </td>
           </tr>
-
-          <!-- <tr class="party-dem2" title="party">
-              <td title="party">
-                <span class="candidate-color-label" title="party"></span>
-              </td>
-              <td class="cand">
-                <span class="first">Robert&nbsp;</span>Taft
-                <span class="party-label">(r, oh)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 1%;"></span>
-              </td>
-          </tr>
-
-          <tr class="party-dem winner" title="party">
-              <td class="winner" title="party">
-                <span class="candidate-color-label" title="party"></span>
-                <span class="check">✓</span>
-              </td>
-              <td class="cand">
-                <span class="first">Thomas&nbsp;</span>Dewey
-                <span class="party-label">(r, ny)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 0%;"></span>
-              </td>
-          </tr>
-
-                <tr class="party-dem4" title="party">
-                    <td title="party">
-                      <span class="candidate-color-label" title="party"></span>
-                    </td>
-                    <td class="cand">
-                      <span class="first">Riley&nbsp;</span>Bender
-                      <span class="party-label">(r, il)</span>
-                    </td>
-                    <td class="votes"><span>0</span></td>
-                    <td class="pct"><span class="num">0%</span></td>
-                    <td class="bar" title="party">
-                      <span class="pctBar" style="width: 1%;"></span>
-                    </td>
-                </tr>
-                  
-                  <tr class="party-dem5" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Leverette&nbsp;</span>Saltonstall
-                        <span class="party-label">(r, ma)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr>
-
-                  <tr class="party-dem6" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Herbert&nbsp;</span>Hitchcock
-                        <span class="party-label">(r, sd)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr> -->
           </tbody>
       </table>
 </div>
@@ -175,7 +102,7 @@
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem3" title="party">
+              <tr class="party-dem1" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -189,97 +116,6 @@
                     <span class="pctBar" style="width: 1%;"></span>
                   </td>
               </tr>
-
-            <!-- <tr class="party-dem1" title="party">
-              <td title="party">
-                <span class="candidate-color-label" title="party"></span>
-              </td>
-              <td class="cand">
-                <span class="first">Harold&nbsp;</span>Stassen
-                <span class="party-label">(r, mn)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 1%;"></span>
-              </td>
-          </tr>
-
-          <tr class="party-dem2" title="party">
-              <td title="party">
-                <span class="candidate-color-label" title="party"></span>
-              </td>
-              <td class="cand">
-                <span class="first">Robert&nbsp;</span>Taft
-                <span class="party-label">(r, oh)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 1%;"></span>
-              </td>
-          </tr>
-
-          <tr class="party-dem winner" title="party">
-              <td class="winner" title="party">
-                <span class="candidate-color-label" title="party"></span>
-                <span class="check">✓</span>
-              </td>
-              <td class="cand">
-                <span class="first">Thomas&nbsp;</span>Dewey
-                <span class="party-label">(r, ny)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 0%;"></span>
-              </td>
-          </tr>
-
-                <tr class="party-dem4" title="party">
-                    <td title="party">
-                      <span class="candidate-color-label" title="party"></span>
-                    </td>
-                    <td class="cand">
-                      <span class="first">Riley&nbsp;</span>Bender
-                      <span class="party-label">(r, il)</span>
-                    </td>
-                    <td class="votes"><span>0</span></td>
-                    <td class="pct"><span class="num">0%</span></td>
-                    <td class="bar" title="party">
-                      <span class="pctBar" style="width: 1%;"></span>
-                    </td>
-                </tr>
-                  
-                  <tr class="party-dem5" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Leverette&nbsp;</span>Saltonstall
-                        <span class="party-label">(r, ma)</span>
-                      </td>
-                      <td class="votes"><span>0/span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr>
-
-                  <tr class="party-dem6" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Herbert&nbsp;</span>Hitchcock
-                        <span class="party-label">(r, sd)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">20%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr> -->
           </tbody>
       </table>
 </div>
@@ -306,7 +142,7 @@
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem3" title="party">
+              <tr class="party-dem1" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -321,7 +157,7 @@
                   </td>
               </tr>
 
-              <tr class="party-dem1" title="party">
+              <tr class="party-dem2" title="party">
                 <td title="party">
                   <span class="candidate-color-label" title="party"></span>
                 </td>
@@ -336,7 +172,7 @@
                 </td>
             </tr>
 
-            <tr class="party-dem2" title="party">
+            <tr class="party-dem3" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -350,69 +186,6 @@
                 <span class="pctBar" style="width: 1%;"></span>
               </td>
           </tr>
-
-            <!-- 
-
-          <tr class="party-dem winner" title="party">
-              <td class="winner" title="party">
-                <span class="candidate-color-label" title="party"></span>
-                <span class="check">✓</span>
-              </td>
-              <td class="cand">
-                <span class="first">Thomas&nbsp;</span>Dewey
-                <span class="party-label">(r, ny)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 0%;"></span>
-              </td>
-          </tr>
-
-                <tr class="party-dem4" title="party">
-                    <td title="party">
-                      <span class="candidate-color-label" title="party"></span>
-                    </td>
-                    <td class="cand">
-                      <span class="first">Riley&nbsp;</span>Bender
-                      <span class="party-label">(r, il)</span>
-                    </td>
-                    <td class="votes"><span>0</span></td>
-                    <td class="pct"><span class="num">0%</span></td>
-                    <td class="bar" title="party">
-                      <span class="pctBar" style="width: 1%;"></span>
-                    </td>
-                </tr>
-                  
-                  <tr class="party-dem5" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Leverette&nbsp;</span>Saltonstall
-                        <span class="party-label">(r, ma)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr>
-
-                  <tr class="party-dem6" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Herbert&nbsp;</span>Hitchcock
-                        <span class="party-label">(r, sd)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr> -->
           </tbody>
       </table>
 </div>
@@ -438,7 +211,7 @@
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem3" title="party">
+              <tr class="party-dem1" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -453,7 +226,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem1" title="party">
+            <tr class="party-dem2" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -467,82 +240,6 @@
                 <span class="pctBar" style="width: 1%;"></span>
               </td>
           </tr>
-<!-- 
-          <tr class="party-dem2" title="party">
-              <td title="party">
-                <span class="candidate-color-label" title="party"></span>
-              </td>
-              <td class="cand">
-                <span class="first">Robert&nbsp;</span>Taft
-                <span class="party-label">(r, oh)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 1%;"></span>
-              </td>
-          </tr>
-
-          <tr class="party-dem winner" title="party">
-              <td class="winner" title="party">
-                <span class="candidate-color-label" title="party"></span>
-                <span class="check">✓</span>
-              </td>
-              <td class="cand">
-                <span class="first">Thomas&nbsp;</span>Dewey
-                <span class="party-label">(r, ny)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 0%;"></span>
-              </td>
-          </tr>
-
-                <tr class="party-dem4" title="party">
-                    <td title="party">
-                      <span class="candidate-color-label" title="party"></span>
-                    </td>
-                    <td class="cand">
-                      <span class="first">Riley&nbsp;</span>Bender
-                      <span class="party-label">(r, il)</span>
-                    </td>
-                    <td class="votes"><span>0</span></td>
-                    <td class="pct"><span class="num">0%</span></td>
-                    <td class="bar" title="party">
-                      <span class="pctBar" style="width: 1%;"></span>
-                    </td>
-                </tr>
-                  
-                  <tr class="party-dem5" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Leverette&nbsp;</span>Saltonstall
-                        <span class="party-label">(r, ma)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr>
-
-                  <tr class="party-dem6" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Herbert&nbsp;</span>Hitchcock
-                        <span class="party-label">(r, sd)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr> -->
           </tbody>
       </table>
 </div>
@@ -569,7 +266,7 @@
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem3" title="party">
+              <tr class="party-dem1" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -584,7 +281,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem1" title="party">
+            <tr class="party-dem2" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -598,82 +295,6 @@
                 <span class="pctBar" style="width: 1%;"></span>
               </td>
           </tr>
-
-          <!-- <tr class="party-dem2" title="party">
-              <td title="party">
-                <span class="candidate-color-label" title="party"></span>
-              </td>
-              <td class="cand">
-                <span class="first">Robert&nbsp;</span>Taft
-                <span class="party-label">(r, oh)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 1%;"></span>
-              </td>
-          </tr>
-
-          <tr class="party-dem winner" title="party">
-              <td class="winner" title="party">
-                <span class="candidate-color-label" title="party"></span>
-                <span class="check">✓</span>
-              </td>
-              <td class="cand">
-                <span class="first">Thomas&nbsp;</span>Dewey
-                <span class="party-label">(r, ny)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 0%;"></span>
-              </td>
-          </tr>
-
-                <tr class="party-dem4" title="party">
-                    <td title="party">
-                      <span class="candidate-color-label" title="party"></span>
-                    </td>
-                    <td class="cand">
-                      <span class="first">Riley&nbsp;</span>Bender
-                      <span class="party-label">(r, il)</span>
-                    </td>
-                    <td class="votes"><span>0</span></td>
-                    <td class="pct"><span class="num">0%</span></td>
-                    <td class="bar" title="party">
-                      <span class="pctBar" style="width: 1%;"></span>
-                    </td>
-                </tr>
-                  
-                  <tr class="party-dem5" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Leverette&nbsp;</span>Saltonstall
-                        <span class="party-label">(r, ma)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr>
-
-                  <tr class="party-dem6" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Herbert&nbsp;</span>Hitchcock
-                        <span class="party-label">(r, sd)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr> -->
           </tbody>
       </table>
 </div>
@@ -699,7 +320,7 @@
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem3" title="party">
+              <tr class="party-dem1" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -714,7 +335,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem1" title="party">
+            <tr class="party-dem2" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -728,84 +349,6 @@
                 <span class="pctBar" style="width: 1%;"></span>
               </td>
           </tr>
-
-              <!-- 
-
-          <tr class="party-dem2" title="party">
-              <td title="party">
-                <span class="candidate-color-label" title="party"></span>
-              </td>
-              <td class="cand">
-                <span class="first">Robert&nbsp;</span>Taft
-                <span class="party-label">(r, oh)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 1%;"></span>
-              </td>
-          </tr>
-
-          <tr class="party-dem winner" title="party">
-              <td class="winner" title="party">
-                <span class="candidate-color-label" title="party"></span>
-                <span class="check">✓</span>
-              </td>
-              <td class="cand">
-                <span class="first">Thomas&nbsp;</span>Dewey
-                <span class="party-label">(r, ny)</span>
-              </td>
-              <td class="votes"><span>0</span></td>
-              <td class="pct"><span class="num">0%</span></td>
-              <td class="bar" title="party">
-                <span class="pctBar" style="width: 0%;"></span>
-              </td>
-          </tr>
-
-                <tr class="party-dem4" title="party">
-                    <td title="party">
-                      <span class="candidate-color-label" title="party"></span>
-                    </td>
-                    <td class="cand">
-                      <span class="first">Riley&nbsp;</span>Bender
-                      <span class="party-label">(r, il)</span>
-                    </td>
-                    <td class="votes"><span>0</span></td>
-                    <td class="pct"><span class="num">0%</span></td>
-                    <td class="bar" title="party">
-                      <span class="pctBar" style="width: 1%;"></span>
-                    </td>
-                </tr>
-                  
-                  <tr class="party-dem5" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Leverette&nbsp;</span>Saltonstall
-                        <span class="party-label">(r, ma)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr>
-
-                  <tr class="party-dem6" title="party">
-                      <td title="party">
-                        <span class="candidate-color-label" title="party"></span>
-                      </td>
-                      <td class="cand">
-                        <span class="first">Herbert&nbsp;</span>Hitchcock
-                        <span class="party-label">(r, sd)</span>
-                      </td>
-                      <td class="votes"><span>0</span></td>
-                      <td class="pct"><span class="num">0%</span></td>
-                      <td class="bar" title="party">
-                        <span class="pctBar" style="width: 1%;"></span>
-                      </td>
-                  </tr> -->
           </tbody>
       </table>
 </div>

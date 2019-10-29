@@ -15,10 +15,14 @@
     "node": ">=10.14.0"
   },
   "dependencies": {
+    "blobjs": "^1.1.1",
     "c3": "^0.7.11",
     "d3": "^5.12.0",
+    "file-saver": "^2.0.2",
+    "intersection-observer": "^0.7.0",
     "lodash": "^4.17.5",
-    "query-string": "^4.3.2"
+    "query-string": "^4.3.2",
+    "topojson": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",

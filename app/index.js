@@ -90,3 +90,27 @@ utils.environmentNoting();
 //   });
 // });
 
+
+import Map from './map.js';
+
+const map = new Map("#mapper");
+
+var scope = 'CD8';
+var zoom = 'metro';
+var race = 8;
+var party = 'DFL';
+
+var data;
+function loadData(data){
+    map.render(scope, zoom, party, "all", race, data);
+}
+
+$.ajax({
+  url: './data/' + race + '.json',
+  async: false,
+  dataType: 'json',
+  success: function (response) {
+    data = response.results; 
+    loadData(data);
+  }
+});
