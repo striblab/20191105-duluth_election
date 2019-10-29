@@ -1613,7 +1613,11 @@ h2 {
 }
 
 // breakpoints 
+
 @media (max-width:800px) {
+  #wrapper, .slide, .map, .counter, .contest-table, #chart {
+    width: 100% !important;
+}
     .slide, .container-lg, #wrapper {
         width:100% !important;
         max-width:100% !important;
@@ -1626,11 +1630,45 @@ h2 {
    }
 }
 
-@media (max-width:600px) {
-
-
+/* Mobile styles */
+@media (max-width:520px) {
+  .container-lg {
+    max-width:100%;
+    width:100% !important;
+    min-width:100% !important;
+  }
+  .tooltip {
+  display:none !important;
+  }
+  .slide, .map {
+    width:100% !important;
+  }
+  .fallback { 
+    width: 100%;
+   }
+   .fallback svg {
+    width: 100% !important;
+    height:auto !important;
+   }
 }
 
-@media (max-width:400px) {
-
+@media (max-width:520px) {
+  .axisLabel {
+    margin-left:0 !important;
+  }
+  .map {
+  width:100%;
+  }
+  #wrapper {
+    width: 100%;
 }
+.states-names text {
+  opacity:0 !important;
+  display:none !important;
+}
+.state-block {
+  padding-top:8px !important;
+}
+}
+
+
