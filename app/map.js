@@ -2,7 +2,6 @@ import 'intersection-observer';
 import * as d3 from 'd3';
 import * as topojson from "topojson";
 import * as filesaver from "file-saver";
-import * as blobjs from "blobjs";
 import us from '../sources/mnpct-small.json';
 import mn from '../sources/mncd.json';
 import mncounties from '../sources/counties.json';
@@ -228,6 +227,15 @@ class Map {
                 }))
                 .transition()
                 .duration(600)
+                .attr('class', function(d){
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].match == (d.properties.COUNTYCODE + d.properties.CONGDIST + d.properties.MNLEGDIST + d.properties.PCTCODE)) {
+                            console.log('hit');
+                            return 'precinct CD' + d.properties.CONGDIST;
+                        } 
+                    }
+                    return 'precinct noclicky CD' + d.properties.CONGDIST;
+                })
                 .style('fill', function(d) {
                     var winner = '';
                     var winner_sat = '';
@@ -273,7 +281,7 @@ class Map {
             var projection = d3.geoAlbers().scale(5037).translate([50, 970]);
 
             var width = 520;
-            var height = 600;
+            var height = 500;
             var centered;
 
             // function zoomed() {         
@@ -382,7 +390,7 @@ class Map {
 
             //Draw precincts
             self.g.append('g')
-                .attr('class', 'precincts')
+                .attr('class', 'precincts') 
                 .selectAll('path')
                 .data((topojson.feature(us, us.objects.convert).features).filter(function(d) {
                     if (filtered != "all") {
@@ -393,9 +401,6 @@ class Map {
                 }))
                 .enter().append('path')
                 .attr('d', path)
-                .attr('class', function(d) {
-                    return 'precinct CD' + d.properties.CONGDIST;
-                })
                 .attr('id', function(d) {
                     return 'P' + d.properties.VTDID;
                 })
@@ -406,7 +411,7 @@ class Map {
                 })
                 .on('click', function(d) {
                     if (race != "5") {
-                        clicked(d, 12);
+                        clicked(d, 12.5);
                     }
                 });
 
@@ -476,27 +481,27 @@ class Map {
                 });
 
 
-            d3.select("#generate")
-                .on("click", writeDownloadLink);
+            // d3.select("#generate")
+            //     .on("click", writeDownloadLink);
 
-            function writeDownloadLink() {
-                try {
-                    var isFileSaverSupported = !!new Blob();
-                } catch (e) {
-                    alert("blob not supported");
-                }
+            // function writeDownloadLink() {
+            //     try {
+            //         var isFileSaverSupported = !!new Blob();
+            //     } catch (e) {
+            //         alert("blob not supported");
+            //     }
 
-                var html = d3.select("svg")
-                    .attr("title", "screengrab")
-                    .attr("version", 1.1)
-                    .attr("xmlns", "http://www.w3.org/2000/svg")
-                    .node().parentNode.innerHTML;
+            //     var html = d3.select("svg")
+            //         .attr("title", "screengrab")
+            //         .attr("version", 1.1)
+            //         .attr("xmlns", "http://www.w3.org/2000/svg")
+            //         .node().parentNode.innerHTML;
 
-                var blob = new Blob([html], {
-                    type: "image/svg+xml"
-                });
-                filesaver.saveAs(blob, "saved.html");
-            };
+            //     var blob = new Blob([html], {
+            //         type: "image/svg+xml"
+            //     });
+            //     filesaver.saveAs(blob, "saved.html");
+            // };
 
             function clicked(d, k) {
                 var x, y, stroke;
@@ -545,13 +550,13 @@ class Map {
             }
 
 
-            var aspect = 520 / 600,
+            var aspect = 520 / 500,
                 chart = $(self.target + ' svg');
             var targetWidth = chart.parent().width();
             chart.attr('width', targetWidth);
             chart.attr('height', targetWidth / aspect);
             if ($(window).width() <= 520) {
-                $(self.target + ' svg').attr('viewBox', '0 0 500 600');
+                $(self.target + ' svg').attr('viewBox', '0 0 500 500');
             }
 
             $(window).on('resize', function() {
