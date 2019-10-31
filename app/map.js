@@ -1,10 +1,7 @@
 import 'intersection-observer';
 import * as d3 from 'd3';
 import * as topojson from "topojson";
-import * as filesaver from "file-saver";
 import us from '../sources/mnpct-small.json';
-import mn from '../sources/mncd.json';
-import mncounties from '../sources/counties.json';
 
 
 class Map {
@@ -23,9 +20,6 @@ class Map {
         this.colorScale2 = d3.scaleOrdinal()
             .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'r1', 'r2', 'r3', 'r4'])
             .range(['#83bc6d', '#82bae0', '#9d6cb2', '#3b7062', '#999999', '#7f98aa', '#eb6868', '#d6d066', '#F2D2A4', '#ed61a7']);
-        // this.colorScale2 = d3.scaleOrdinal()
-        //     .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'r1', 'r2', 'r3'])
-        //     .range(['#43710f', '#3b6e91', '#50156a', '#255a51', '#322a56', '#333333', '#a31616', '#7a7406', '#ae4c04']);
     }
 
     /********** PRIVATE METHODS **********/
@@ -129,13 +123,6 @@ class Map {
         }
 
         candidateList.sort(sortCandidates);
-
-        for (var k=0; k < candidateList.length; k++) {
-            candidateThread = candidateThread + "<div class='resultRow'><div class='name'><span class='key_legend' style='background-color:" + candidateList[k][0] + ";'></span>&nbsp;" + candidateList[k][1] + "</div><div class='percent'>" + d3.format(".1f")(candidateList[k][2]) + "%</div></div>"
-        }
-
-        $(self.target + ' .key').append("<div class='tipTitle'>Overall</div>");
-        $(self.target + ' .key').append(candidateThread);
 
             d3.helper = {};
 
@@ -283,23 +270,6 @@ class Map {
             var height = 500;
             var centered;
 
-            function zoomed() {         
-                self.g.style('transform', 'scale(' + d3.event.transform.k + ')');
-            }
-
-            var zoom = d3.zoom()                            
-                .scaleExtent([1, 12])
-                .translateExtent([[0, 0], [width, height]])
-                .extent([[0, 0], [width, height]])
-                .on("zoom", zoomed)
-
-            self.g.call(d3.zoom().on("zoom", function () {
-                self.g.attr("transform", d3.event.transform)
-                $(".reset").show();
-                $(".city-label").addClass("hidden");
-                $(".mark").addClass("hidden");
-            }));
-
             var path = d3.geoPath(projection);
 
             var states = topojson.feature(us, us.objects.convert);
@@ -311,15 +281,6 @@ class Map {
                 s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
                 t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
 
-            // var svg = d3.select(target + " svg").attr("width", width).attr("height", height);
-            // var g = svg.append("g");
-
-
-            // self._render_legend();
-
-            // Only fire resize events in the event of a width change because it prevents
-            // an awful mobile Safari bug and developer rage blackouts.
-            // https://stackoverflow.com/questions/9361968/javascript-resize-event-on-scroll-mobile
             var cachedWidth = window.innerWidth;
             d3.select(window).on('resize', function() {
                 var newWidth = window.innerWidth;
@@ -327,64 +288,6 @@ class Map {
                     cachedWidth = newWidth;
                 }
             });
-
-            //City labels
-            var marks = [{
-                    long: -93.266667,
-                    lat: 44.983333,
-                    name: "Minneapolis"
-                },
-                {
-                    long: -92.100485,
-                    lat: 46.786672,
-                    name: "Duluth"
-                },
-                {
-                    long: -95.918889,
-                    lat: 45.591944,
-                    name: "Morris"
-                },
-                {
-                    long: -93.999400,
-                    lat: 44.163578,
-                    name: "Mankato"
-                },
-                {
-                    long: -92.480199,
-                    lat: 44.012122,
-                    name: "Rochester"
-                },
-                {
-                    long: -94.882686,
-                    lat: 47.471573,
-                    name: "Bemidji"
-                },
-                {
-                    long: -94.202008,
-                    lat: 46.352673,
-                    name: "Brainerd"
-                },
-                {
-                    long: -96.767804,
-                    lat: 46.873765,
-                    name: "Moorhead"
-                },
-                {
-                    long: -92.5338,
-                    lat: 44.5625,
-                    name: "Red Wing"
-                },
-                {
-                    long: -94.1642,
-                    lat: 45.5616,
-                    name: "St. Cloud"
-                },
-                {
-                    long: -95.7884,
-                    lat: 44.4469,
-                    name: "Marshall"
-                }
-            ];
 
 
             //Draw precincts
@@ -413,94 +316,6 @@ class Map {
                         clicked(d, 12.5);
                     }
                 });
-
-            //Draw congressional districts
-            self.g.append('g')
-                .attr('class', 'districts')
-                .selectAll('path')
-                .data(topojson.feature(mn, mn.objects.mncd).features)
-                .enter().append('path')
-                .attr('d', path)
-                .attr('class', function(d) {
-                    return 'district CD' + d.properties.DISTRICT;
-                })
-                .attr('id', function(d) {
-                    return 'P' + d.properties.DISTRICT;
-                })
-                .style('stroke-width', '1px')
-                .on('mousedown', function(d) {})
-                .on('click', function(d) {
-                    if (d.properties.DISTRICT == "5") {
-                        clicked(d, 23);
-                        $(".CD1, .CD2, .CD3, .CD4, .CD5, .CD6, .CD7, .CD8").addClass("infocus");
-                        $("#P" + d.properties.DISTRICT).addClass("hidden");
-                    } else {
-                        if (race != "5") {
-                            clicked(d, 12);
-                        }
-                    }
-                });
-
-
-            //Draw county borders
-            self.g.append('g')
-                .attr('class', 'counties')
-                .selectAll('path')
-                .data(topojson.feature(mncounties, mncounties.objects.counties).features)
-                .enter().append('path')
-                .attr("class", "county")
-                .attr('d', path)
-                .attr('fill', 'none')
-                .attr('stroke-width', '1px');
-
-            //Draw city labels
-            self.svg.selectAll("circle")
-                .data(marks)
-                .enter()
-                .append("circle")
-                .attr('class', 'mark')
-                .attr('width', 3)
-                .attr('height', 3)
-                .attr("r", "1.3px")
-                .attr("fill", "#333")
-                .attr("transform", function(d) {
-                    return "translate(" + projection([d.long, d.lat]) + ")";
-                });
-
-            self.g.selectAll("text")
-                .data(marks)
-                .enter()
-                .append("text")
-                .attr('class', 'city-label')
-                .attr("transform", function(d) {
-                    return "translate(" + projection([d.long + 0.05, d.lat - 0.03]) + ")";
-                })
-                .text(function(d) {
-                    return " " + d.name;
-                });
-
-
-            // d3.select("#generate")
-            //     .on("click", writeDownloadLink);
-
-            // function writeDownloadLink() {
-            //     try {
-            //         var isFileSaverSupported = !!new Blob();
-            //     } catch (e) {
-            //         alert("blob not supported");
-            //     }
-
-            //     var html = d3.select("svg")
-            //         .attr("title", "screengrab")
-            //         .attr("version", 1.1)
-            //         .attr("xmlns", "http://www.w3.org/2000/svg")
-            //         .node().parentNode.innerHTML;
-
-            //     var blob = new Blob([html], {
-            //         type: "image/svg+xml"
-            //     });
-            //     filesaver.saveAs(blob, "saved.html");
-            // };
 
             function clicked(d, k) {
                 var x, y, stroke;
@@ -567,14 +382,6 @@ class Map {
         //COLOR THE MAP WITH LOADED DATA
             self._populate_colors(filtered, magnify, party, geo, race, data);
 
-        // $(".sort-link").on("click", function(event){
-        //   event.stopPropagation();
-        //   $("#districtList").toggle();
-        //   $("#focus").html($(this).html());
-        //   $(".directions").toggle();
-        //   self._populate_colors($(this).attr("filtered"), $(this).attr("magnify"), $(this).attr("party"), $(this).attr("geo"), $(this).attr("race"));
-        //   return 0;
-        // });
 
     }
 }
