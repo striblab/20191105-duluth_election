@@ -17,6 +17,7 @@
       stroke-width:1px !important;
       font-weight:normal;
       pointer-events:none !important;
+      display:none !important;
   }
   
   .mark {
@@ -24,6 +25,7 @@
       stroke-width:0.7px !important;
       fill:#ffffff !important;
       pointer-events:none !important;
+      display:none !important;
   }
   
   .tooltip {
@@ -104,12 +106,14 @@
   .district {
     fill-opacity:0 !important;
     stroke: white !important;
+    display:none !important;
   }
   
   .county {
     fill-opacity:0 !important;
     stroke: white !important;
-    stroke-width: 0.3px !important;
+    stroke-width: 0 !important;
+    display:none !important;
   }
   
   .infocus {
@@ -1638,13 +1642,6 @@
    .slide, .map {
      width:100% !important;
    }
-   .fallback { 
-     width: 100%;
-    }
-    .fallback svg {
-     width: 100% !important;
-     height:auto !important;
-    }
  }
  
  @media (max-width:520px) {

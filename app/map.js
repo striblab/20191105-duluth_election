@@ -230,7 +230,6 @@ class Map {
                 .attr('class', function(d){
                     for (var i = 0; i < data.length; i++) {
                         if (data[i].match == (d.properties.COUNTYCODE + d.properties.CONGDIST + d.properties.MNLEGDIST + d.properties.PCTCODE)) {
-                            console.log('hit');
                             return 'precinct CD' + d.properties.CONGDIST;
                         } 
                     }
@@ -284,22 +283,22 @@ class Map {
             var height = 500;
             var centered;
 
-            // function zoomed() {         
-            //     self.g.style('transform', 'scale(' + d3.event.transform.k + ')');
-            // }
+            function zoomed() {         
+                self.g.style('transform', 'scale(' + d3.event.transform.k + ')');
+            }
 
-            // var zoom = d3.zoom()                            
-            //     .scaleExtent([1, 12])
-            //     .translateExtent([[0, 0], [width, height]])
-            //     .extent([[0, 0], [width, height]])
-            //     .on("zoom", zoomed)
+            var zoom = d3.zoom()                            
+                .scaleExtent([1, 12])
+                .translateExtent([[0, 0], [width, height]])
+                .extent([[0, 0], [width, height]])
+                .on("zoom", zoomed)
 
-            // self.g.call(d3.zoom().on("zoom", function () {
-            //     self.g.attr("transform", d3.event.transform)
-            //     $(".reset").show();
-            //     $(".city-label").addClass("hidden");
-            //     $(".mark").addClass("hidden");
-            // }));
+            self.g.call(d3.zoom().on("zoom", function () {
+                self.g.attr("transform", d3.event.transform)
+                $(".reset").show();
+                $(".city-label").addClass("hidden");
+                $(".mark").addClass("hidden");
+            }));
 
             var path = d3.geoPath(projection);
 
