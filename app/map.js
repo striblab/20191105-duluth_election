@@ -15,11 +15,11 @@ class Map {
         this.zoomed = false;
         this.scaled = $(target).width() / 520;
         this.colorScale = d3.scaleOrdinal()
-            .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'r1', 'r2', 'r3', 'r4'])
-            .range(['#83bc6d', '#82bae0', '#9d6cb2', '#3b7062', '#999999', '#7f98aa', '#eb6868', '#d6d066', '#F2D2A4', '#ed61a7']);
+            .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6'])
+            .range(['#B6AED4', '#DEA381', '#8CBF82', '#4c4c39', '#7f98aa', '#f2614c']);
         this.colorScale2 = d3.scaleOrdinal()
             .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'r1', 'r2', 'r3', 'r4'])
-            .range(['#83bc6d', '#82bae0', '#9d6cb2', '#3b7062', '#999999', '#7f98aa', '#eb6868', '#d6d066', '#F2D2A4', '#ed61a7']);
+            .range(['#B6AED4', '#DEA381', '#8CBF82', '#4c4c39', '#7f98aa', '#f2614c']);
     }
 
     /********** PRIVATE METHODS **********/
@@ -252,7 +252,7 @@ class Map {
                 });
 
             if (magnify == "metro") {
-                self._clickmn("P271370245");
+                self._clickmn(self.target + "P271370245");
                 $(".reset").hide();
             }
 
@@ -304,7 +304,7 @@ class Map {
                 .enter().append('path')
                 .attr('d', path)
                 .attr('id', function(d) {
-                    return 'P' + d.properties.VTDID;
+                    return self.target + 'P' + d.properties.VTDID;
                 })
                 .style('stroke-width', '0.3px')
                 .style('fill', '#dddddd')

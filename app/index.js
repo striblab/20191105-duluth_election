@@ -92,18 +92,22 @@ utils.environmentNoting();
 
 
 import Map from './map.js';
-import response from '../sources/8.json';
+import response from '../sources/map1.json';
+import response2 from '../sources/map2.json';
 
-const map = new Map("#mapper");
+const map1 = new Map("#mapper1");
+const map2 = new Map("#mapper2");
 
 var scope = 'CD8';
 var zoom = 'metro';
 var race = 8;
 var party = 'DFL';
-var data = response.results;
+var data1 = response.results;
+var data2 = response2.results;
 
-function loadData(data){
+function loadData(map, data){
     map.render(scope, zoom, party, "all", race, data);
 }
 
-loadData(data);
+loadData(map1,data1);
+loadData(map2,data2);

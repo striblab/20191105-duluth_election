@@ -25,6 +25,10 @@
       
   </section>
 
+  <div class="slide">
+      <div class="byline">Incumbents are marked with *</div>
+    </div>
+
   <div class="rule"></div>
   <section class="container-lg">
       <h2 class="chartTitle">Mayor</h2>
@@ -33,7 +37,7 @@
 
   <div class="slide">
 
-      <div class="map" id="mapper">
+      <div class="map" id="mapper1">
           <svg width="520" height="500" viewBox="0 0 520 500" preserveAspectRatio="xMidYMid"></svg>
       </div>
 
@@ -43,16 +47,16 @@
           <tr><th></th>
           <th class="cand">Candidate</th>
           <th class="votes">Votes</th>
-          <th class="pct">Vote %</th>
+          <th class="pct">Vote PCT</th>
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem1" title="party">
-                  <td title="party">
-                    <span class="candidate-color-label" title="party"></span>
-                  </td>
+              <tr class="party-dem1 winner" title="party">
+                  <td class="winner" title="">
+                      <span class="check">✓</span>
+                    </td>
                   <td class="cand">
-                    <span class="first">Emily&nbsp;</span>Larson (i)
+                    <span class="first">Emily&nbsp;</span>Larson *
                     <span class="party-label"></span>
                   </td>
                   <td class="votes"><span>0</span></td>
@@ -96,23 +100,23 @@
         <thead>
           <tr><th></th>
           <th class="cand">Candidate</th>
-          <th class="votes">Votes</th>
-          <th class="pct">Vote %</th>
+          <th class="votes"></th>
+          <th class="pct"></th>
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem1" title="party">
+              <tr class="party-dem4" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
                   <td class="cand">
-                    <span class="first">Arik&nbsp;</span>Forsman (i)
+                    <span class="first">Arik&nbsp;</span>Forsman *
                     <span class="party-label"></span>
                   </td>
-                  <td class="votes"><span>0</span></td>
-                  <td class="pct"><span class="num">0%</span></td>
+                  <td class="votes"><span></span></td>
+                  <td class="pct"><span class="num">UNCONTESTED</span></td>
                   <td class="bar" title="party">
-                    <span class="pctBar" style="width: 1%;"></span>
+                    <span  style="width: 0;"></span>
                   </td>
               </tr>
           </tbody>
@@ -127,9 +131,12 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </section>
 
+  
   <div class="slide">
 
-    <div id="chart"></div>
+      <div class="map" id="mapper2">
+          <svg width="520" height="500" viewBox="0 0 520 500" preserveAspectRatio="xMidYMid"></svg>
+      </div>
 
     <div class="contest-table">
       <table>
@@ -137,7 +144,7 @@
           <tr><th></th>
           <th class="cand">Candidate</th>
           <th class="votes">Votes</th>
-          <th class="pct">Vote %</th>
+          <th class="pct">Vote PCT</th>
           <th class="bar"></th></tr></thead>
 
           <tbody>
@@ -146,7 +153,7 @@
                     <span class="candidate-color-label" title="party"></span>
                   </td>
                   <td class="cand">
-                    <span class="first">Noah&nbsp;</span>Hobbs (i)
+                    <span class="first">Noah&nbsp;</span>Hobbs *
                     <span class="party-label"></span>
                   </td>
                   <td class="votes"><span>0</span></td>
@@ -198,24 +205,22 @@
 
   <div class="slide">
 
-    <div id="chart"></div>
-
     <div class="contest-table">
       <table>
         <thead>
           <tr><th></th>
           <th class="cand">Candidate</th>
           <th class="votes">Votes</th>
-          <th class="pct">Vote %</th>
+          <th class="pct">Vote PCT</th>
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem1" title="party">
+              <tr class="party-dem4" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
                   <td class="cand">
-                    <span class="first">Gary&nbsp;</span>Anderson (i)
+                    <span class="first">Gary&nbsp;</span>Anderson *
                     <span class="party-label"></span>
                   </td>
                   <td class="votes"><span>0</span></td>
@@ -225,7 +230,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem2" title="party">
+            <tr class="party-dem4" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -253,19 +258,17 @@
 
   <div class="slide">
 
-    <div id="chart"></div>
-
     <div class="contest-table">
       <table>
         <thead>
           <tr><th></th>
           <th class="cand">Candidate</th>
           <th class="votes">Votes</th>
-          <th class="pct">Vote %</th>
+          <th class="pct">Vote PCT</th>
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem1" title="party">
+              <tr class="party-dem4" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -280,7 +283,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem2" title="party">
+            <tr class="party-dem4" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
@@ -307,19 +310,17 @@
 
   <div class="slide">
 
-    <div id="chart"></div>
-
     <div class="contest-table">
       <table>
         <thead>
           <tr><th></th>
           <th class="cand">Candidate</th>
           <th class="votes">Votes</th>
-          <th class="pct">Vote %</th>
+          <th class="pct">Vote PCT</th>
           <th class="bar"></th></tr></thead>
 
           <tbody>
-              <tr class="party-dem1" title="party">
+              <tr class="party-dem4" title="party">
                   <td title="party">
                     <span class="candidate-color-label" title="party"></span>
                   </td>
@@ -334,7 +335,7 @@
                   </td>
               </tr>
 
-            <tr class="party-dem2" title="party">
+            <tr class="party-dem4" title="party">
               <td title="party">
                 <span class="candidate-color-label" title="party"></span>
               </td>
