@@ -212,16 +212,13 @@
        font-variant-numeric: tabular-nums;
  
      }
-     
-     .votes {
-       @media (max-width: 420px) {
-         display: none;
-       }
-     }
+    
    
      .bar {
        width: 25%;
-   
+      //  @media (max-width: 420px) {
+      //   display: none;
+      // }
      }
    
      .bar .pctBar {
@@ -1648,12 +1645,5 @@
    }
    #wrapper {
      width: 100%;
- }
- .states-names text {
-   opacity:0 !important;
-   display:none !important;
- }
- .state-block {
-   padding-top:8px !important;
  }
  }
