@@ -16,10 +16,10 @@ class Map {
         this.scaled = $(target).width() / 520;
         this.colorScale = d3.scaleOrdinal()
             .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6'])
-            .range(['#B6AED4', '#DEA381', '#8CBF82', '#4c4c39', '#7f98aa', '#f2614c']);
+            .range(['#B6AED4', '#DEA381', '#8CBF82', '#7f98aa', '#4c4c39', '#f2614c']);
         this.colorScale2 = d3.scaleOrdinal()
-            .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'r1', 'r2', 'r3', 'r4'])
-            .range(['#B6AED4', '#DEA381', '#8CBF82', '#4c4c39', '#7f98aa', '#f2614c']);
+            .domain(['d1', 'd2', 'd3', 'd4', 'd5', 'd6'])
+            .range(['#B6AED4', '#DEA381', '#8CBF82', '#7f98aa', '#4c4c39', '#f2614c']);
     }
 
     /********** PRIVATE METHODS **********/
@@ -313,7 +313,7 @@ class Map {
                 })
                 .on('click', function(d) {
                     if (race != "5") {
-                        clicked(d, 12.5);
+                        clicked(d, 15);
                     }
                 });
 
